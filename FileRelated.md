@@ -65,6 +65,9 @@ The return value is ssize_t (a signed size type) and is crucial for error checki
 1. A positive number: This indicates success. The number is the count of bytes that were actually read and placed into your buffer. This can be less than the count you requested if the end of the file was reached or if data wasn't immediately available.
 2. Zero (0): This means you have reached the End Of File (EOF). No more data can be read.
 3. -1: An error occurred (e.g., the file descriptor was invalid, or there was a hardware read error). You can check the global variable errno to find out the specific error.
+- the maximum value of ssize_t is SSIZE_MAX which is 2,1747,483,647 bytes on 32-bit machine
+
+#### write()
 
 ## <stdio.h>(FILE type)related file management function
 #### fopen
