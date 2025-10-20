@@ -71,3 +71,27 @@ The return value is ssize_t (a signed size type) and is crucial for error checki
 
 ## <stdio.h>(FILE type)related file management function
 #### fopen
+
+## fputs function usage
+- syntax: int fputs(const char* str, FILE* pFile);
+fputs means file + put + string
+* function description
+- 1st parameter: the string which will be put in file.
+- 2nd parameter: file pointer
+- return value: the counts of the character. 
+    1. return value is over than 0 : the function works well
+    2. return value is less than 0 : the function completed abnormally.
+* how this function works
+- write the str string given by parameter.
+
+## fgets function usage
+- syntax: char* fgets(char* str, int num, FILE* pFile);
+fgets means file + get + string -> get string from the file.
+* function description
+- 1st parameter: the variance to put string from the file.
+- 2nd parameter: the length of string to bring 
+- 3rd parameter: file pointer
+- return value: return the string that was brought or null in case of reaching the end of file.
+* how this function works
+- take the strings up to the size of 2nd paramter-1 strings. if there is \n in the middle, read until \n.
+출처: https://blockdmask.tistory.com/404 [가면 뒤의 기록:티스토리]
