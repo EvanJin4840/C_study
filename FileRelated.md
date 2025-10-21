@@ -95,3 +95,7 @@ fgets means file + get + string -> get string from the file.
 * how this function works
 - take the strings up to the size of 2nd paramter-1 strings. if there is \n in the middle, read until \n.
 출처: https://blockdmask.tistory.com/404 [가면 뒤의 기록:티스토리]
+* terms
+- Null-terminated means a string of characters that ends with a special character called the null character ('\0'), which has value zero. This marks the end of the string so functions know where it stops in memory, even if the array is longer. For example, the string "hi" is stored as {'h', 'i', '\0'}. This is standard in C programming to know string length at runtime without storing length separately.
+- feof() and ferror() are C library functions to check the status of a file stream after a read operation. feof() returns true if the end-of-file (EOF) has been reached, meaning no more data to read. ferror() returns true if an I/O error occurred during reading. You use these to distinguish why a function like fgets() returned NULL — whether it was because the file ended or because of an error.
+- A pointer to the buffer is a memory address that points to where the read characters are stored in your program (the buffer array you passed to fgets()). fgets() returns this pointer to indicate success and allow further access to the read string. If it returns NULL, no characters were read.
