@@ -10,9 +10,11 @@
 ## <fcntl.h>(file control operation)related file management System call
 #### open()
 - Including <sys/types.h>, <sys/stat.h> and <fcntl.h> is required
-##### format: ```int open(const char *path, int flags(, optional -> /*, mode_t mode */));```
+- syntax
+```int open(const char *path, int flags(, optional -> /*, mode_t mode */));```
+
 - path: The path to the file you want to open (e.g., "myfile.txt").
-- flags: Options specifying how to open the file. Multiple flags can be combined using the | (bitwise OR) operator.
+- flags: Options specifying how to open the file. Multiple flags can be combined using the | (bitwise OR) operator. Following things can be the flags parameter.
 - O_RDONLY: Open for reading only.
 - O_WRONLY: Open for writing only.
 - O_RDWR: Open for both reading and writing.
@@ -69,6 +71,15 @@ The return value is ssize_t (a signed size type) and is crucial for error checki
 
 #### write()
 
+
+
+#### close()
+
+
+#### lseek()
+- syntax
+off_t lseek(int fd, off_t offset, int whence)
+
 ## <stdio.h>(FILE type)related file management function
 #### fopen
 
@@ -99,3 +110,4 @@ fgets means file + get + string -> get string from the file.
 - Null-terminated means a string of characters that ends with a special character called the null character ('\0'), which has value zero. This marks the end of the string so functions know where it stops in memory, even if the array is longer. For example, the string "hi" is stored as {'h', 'i', '\0'}. This is standard in C programming to know string length at runtime without storing length separately.
 - feof() and ferror() are C library functions to check the status of a file stream after a read operation. feof() returns true if the end-of-file (EOF) has been reached, meaning no more data to read. ferror() returns true if an I/O error occurred during reading. You use these to distinguish why a function like fgets() returned NULL — whether it was because the file ended or because of an error.
 - A pointer to the buffer is a memory address that points to where the read characters are stored in your program (the buffer array you passed to fgets()). fgets() returns this pointer to indicate success and allow further access to the read string. If it returns NULL, no characters were read.
+- Offset: This is the actual, concrete integer value (of type $off_t$) that represents the file pointer's location, measured in bytes from a reference point (like the beginning of the file).
