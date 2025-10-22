@@ -70,8 +70,14 @@ The return value is ssize_t (a signed size type) and is crucial for error checki
 - the maximum value of ssize_t is SSIZE_MAX which is 2,1747,483,647 bytes on 32-bit machine
 
 #### write()
-
-
+- syntax
+```ssize_t write(int fd, const void *buf, size_t nbytes);```
+1. file descriptor
+2. buffer that have data to write
+3. the length of data to write
+- return value
+-1 : error
+- if return value is less than nbytes(third paramter), it can be considered as error.
 
 #### close()
 
