@@ -21,3 +21,5 @@ Usage: Pass the pointer received from memory allocation functions. After freeing
 
 - You can use malloc and free to allocate arrays, structs, and even multi-dimensional arrays (by nesting malloc calls).​
 - realloc can resize allocated memory if needed, and calloc can allocate zero-initialized memory.​
+
+- In addition to the basic usage, ensure memory alignment when necessary, and be cautious with complex structures to avoid pointer issues. Always handle NULL results from malloc gracefully, and document your memory management clearly to prevent leaks and undefined behavior. Proper error handling and deallocation strategies lead to more reliable and maintainable programs.
