@@ -15,3 +15,9 @@
 
 - Pointer to Pointer
   C allows pointers that store the address of another pointer, called double pointers. The syntax uses two asterisks like int **ptrptr; and requires double dereferencing **ptrptr to access the final value.
+
+- Function Pointers
+  Pointers can store addresses of functions, enabling callback mechanisms and dynamic function selection. The syntax is int (\*fptr)(int, int); for a pointer to a function taking two ints and returning an int.
+
+- Pointer Arithmetic
+  You can perform arithmetic operations on pointers to navigate through memory. When you add 1 to a pointer, it moves forward by the size of the data type it points to. For example, ptr + 1 moves to the next element in an array, and \*(ptr + 2) accesses the third element.
