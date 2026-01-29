@@ -125,4 +125,10 @@ a = a ^ b;
 
 ### Variable argument lists (va_list, va_start, va_end)
 
-Static vs dynamic scoping
+#### Static vs dynamic scoping
+
+Static Scoping (Lexical Scoping): Variable scope determined at compile-time based on code structure. When a function references a variable, the compiler looks at where the function is defined in the source code. In C, a function always uses variables from its defining scope (local → enclosing blocks → global). Example: if f() is defined at global level and uses variable x, it always refers to global x, even if called from a function with its own local x.
+
+Dynamic Scoping: Variable scope determined at runtime based on the call stack. When a function references a variable, the runtime system looks at where the function is called from. The most recent definition in the calling chain is used. C does not support this natively; it's found in languages like Lisp and Perl.
+
+Key Difference: Static scoping asks "Where is this function written in the code?" Dynamic scoping asks "Where is this function being called from right now?"
