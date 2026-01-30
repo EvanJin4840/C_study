@@ -125,6 +125,20 @@ a = a ^ b;
 
 ### Variable argument lists (va_list, va_start, va_end)
 
+Key components:
+
+va_list: Type that holds argument list information
+
+va_start(list, last_fixed_param): Initializes the va_list, pointing to where variable arguments begin
+
+va_arg(list, type): Retrieves the next argument of specified type; moves to next argument after each call
+
+va_end(list): Cleans up the va_list memory
+
+Basic pattern: Declare function with at least one fixed parameter followed by ... (ellipsis). Inside function: declare va_list variable → call va_start() → retrieve arguments with va_arg() in loop → call va_end() to clean up.
+
+Example: printf() uses this mechanism to accept format string plus variable number of values. You typically need one fixed parameter (like count) to know how many variable arguments to process.
+
 #### Static vs dynamic scoping
 
 Static Scoping (Lexical Scoping): Variable scope determined at compile-time based on code structure. When a function references a variable, the compiler looks at where the function is defined in the source code. In C, a function always uses variables from its defining scope (local → enclosing blocks → global). Example: if f() is defined at global level and uses variable x, it always refers to global x, even if called from a function with its own local x.
