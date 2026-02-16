@@ -26,3 +26,10 @@
 
 - Pointer Arithmetic
   You can perform arithmetic operations on pointers to navigate through memory. When you add 1 to a pointer, it moves forward by the size of the data type it points to. For example, ptr + 1 moves to the next element in an array, and \*(ptr + 2) accesses the third element.
+
+* Wild Pointers vs. Dangling Pointers
+- These are the "danger zones" of C programming that cause unexpected crashes (Segmentation Faults).
+- Wild Pointer: A pointer that has been declared but not initialized. It points to an arbitrary (random) memory location.
+Rule: Always initialize with NULL.
+- Dangling Pointer: A pointer that still stores the address of a memory block that has already been deleted (freed).
+* Rule: Set the pointer to NULL immediately after free()
